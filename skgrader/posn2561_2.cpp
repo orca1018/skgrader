@@ -11,7 +11,6 @@ int main() {
     }
     for (int j=0; j<n; j++) {
         print_sp(sp[j]);
-        printf("\n");
     }
     
     return 0;
@@ -19,8 +18,8 @@ int main() {
 
 void print_sp(int n) {
     for (int k=0; k<n; k++) {
-        for (int l=0; l<19; l++) {
-            if (l == 18-k) {
+        for (int l=0; l<20; l++) {
+            if (l == 19-k) {
                 printf("/");
             }
             else {
@@ -30,7 +29,7 @@ void print_sp(int n) {
         printf("\n");
     }
     for (int a=n; a>0; a--) {
-        for (int b=19; b>0; b--) {
+        for (int b=20; b>0; b--) {
             if (b == a) {
                 printf("\\");
             }
@@ -38,6 +37,9 @@ void print_sp(int n) {
                 printf(" ");
             }
         }
+        printf("\n");
+    }
+}
         printf("\n");
     }
 }
