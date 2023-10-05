@@ -1,17 +1,14 @@
-#include<stdio.h>
-#include<assert.h>
+#include <stdio.h>
 
-int main()
-{
-	int n, i, ans = 1;
-	
-	scanf("%d", &n);
-	assert(n>=0);
-	assert(n<=10);
-	for(i=n; i>=1; i--) {
-		ans = ans*i;
-	}
-	printf("%d", ans);
-	
-	return 0;
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int ans = 1;
+    for (int i=1; i<=n; i++) {
+        ans*=i;
+    }
+    printf("%d", ans);
+    
+    return 0;
 }
