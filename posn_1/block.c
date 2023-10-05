@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 int main() {
-    double a, b, c;
-    scanf("%lf %lf %lf", &a, &b, &c);
-    double vol = a*b*c;
-    double sur = 2*c*(a+b)+2*a*b;
-    printf("%lf\n%lf", vol, sur);
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+    int vol = a*b*c;
+    int sur = 2*c*(a+b)+2*a*b;
+    printf("%d\n%d", vol, sur);
     
     return 0;
 }
