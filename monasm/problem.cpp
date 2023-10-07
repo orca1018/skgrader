@@ -17,19 +17,21 @@ int main() {
 
         int num_count = 0, flag_1 = 1;
         if (strncmp(str, "Agent", 5) == 0 && str[5] == ' ') {
-            int c = 6;
+            int cnt = 6;
             do {
-                if (isdigit(str[c])) {
+                if (str[cnt] >= '0' && str[cnt] <= '9') {
                     num_count++;
-                } else if (str[c] == '\0') {
+                } 
+                else if (str[cnt] == '\0') {
                     break;
-                } else {
+                }
+                else {
                     flag_1 = 0;
                     break;
                 }
-                c++; 
+                cnt++;
             } while (1);
-
+            
             if (flag_1 == 1 && num_count > 0) {
                 printf("Agent ");
                 for (int j = 0; j < num_count; j++) {
@@ -41,7 +43,7 @@ int main() {
             }
         }
         
-        else if (strncmp(str, "Mr", 2) == 0) {
+        else if (strncmp(str, "Mr", 2) == 0 && str[2] == ' ') {
             int flag_2 = 1;
             int k = 3;
             while (str[k] != '\0') {
@@ -56,7 +58,15 @@ int main() {
             } else {
                 printf("Secret Agent");
             }
-        } else {
+        } 
+        
+        else if (isdigit(str[0])) {
+            printf("Agent ");
+            for (int l=0; l<strlen(str); l++) {
+                printf("X");
+            }
+        }
+        else {
             printf("Secret Agent");
         }
 
