@@ -2,27 +2,30 @@
 #include <string.h>
 
 int main() {
+
     char num[1000001];
-    fgets(num, sizeof(num), stdin);
-    if (num[strlen(num)-1] == '\n') {
-        num[strlen(num)-1] = '\0';
-    }
+    scanf("%1000000s", num);
+    int len = strlen(num);
 
-    int rem1 = 0;
-    for (int i=0; i<strlen(num); i++) {
-        num[i]-='0';
-        num[i]+=10*rem1;
-        rem1 = num[i] % 3;
+    int sum3 = 0;
+    for (int i = 0; i < len; i++) {
+        sum3 += (num[i] - '0');
     }
-    printf("%d ", rem1);
-
-    int rem2 = 0;
-    for (int j=0; j<strlen(num); j++) { // somehow error
-        num[j]-='0';
-        num[j]+=10*rem2;
-        rem2 = num[j] % 11;
+    
+    int mod11 = 0;
+    for(int i = 0 ; num[i] != '\0' ; i++){
+        mod11 = mod11 * 10 + (num[i] - '0');
+        mod11 %= 11;
     }
-    printf("%d", rem2);
-
+    
+    if (sum3 < 0) {
+        sum3 = -sum3;
+    }
+    if (mod11 < 0) {
+        mod11 = -mod11;
+    }
+    
+    printf("%d %d", sum3 % 3, mod11 % 11);
+    
     return 0;
 }
