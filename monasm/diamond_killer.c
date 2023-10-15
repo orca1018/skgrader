@@ -1,5 +1,7 @@
-
-  
+/*
+This shit is cringe.
+            -Monasm
+*/  
 #include <stdio.h>
 
 struct top{
