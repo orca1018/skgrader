@@ -73,5 +73,7 @@ int main() {
         printf("\n");
     } while (1);
 
+    printf("END");
+
     return 0;
 }
